@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "sdc6sd16vs1d",
+    "position": "worker",
+    "typeOfEmployment": "part time",
+
+    "companyName": "Company",
+    "contactPhoneNumber": "+38011 222 33 44",
+    "email": "mail@mail.com",
+    "location": "Kyiv",
+
+    "salaryMin": 1000,
+    "salaryMax": 2000,
+
+    "description": "bla-bla-bla, bla-bla-bla."
+  },
+  {
+    "_id": "sdc6sscdsd5c",
+    "position": "master",
+    "typeOfEmployment": "full time",
+
+    "companyName": "New Company",
+    "contactPhoneNumber": "+38055 666 77 88",
+    "email": "mail@mail.com",
+    "location": "Lviv",
+
+    "salaryMin": 2000,
+    "salaryMax": 3000,
+
+    "description": "bla-bla-bla, bla-bla-bla, bla-bla-bla, bla-bla-bla."
+  }
+]

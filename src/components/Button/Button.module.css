@@ -1,0 +1,42 @@
+.container {
+  text-align: center;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: .5rem 2rem;
+  border-radius: .4rem;
+  font-weight: var(--font-medium);
+  transition: .3s;
+}
+
+.regular {
+  composes: button;
+  background-color: green;
+  /* color: var(--container-color); */
+}
+
+.danger {
+  composes: button;
+  background-color: red;
+  /* color: var(--container-color); */
+}
+
+.disabled {
+  composes: button;
+  background-color: grey;
+  /* color: var(--title-color); */
+}
+
+.edit {
+  composes: button;
+  background-color: skyblue;
+  /* color: var(--container-color); */
+}
+

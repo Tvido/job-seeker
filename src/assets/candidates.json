@@ -1,0 +1,51 @@
+[
+  {
+    "_id": "wccvevevr",
+    "name": "firstName",
+    "birthDate": "05.05",
+    "avatar": "https://st.depositphotos.com/2101611/3925/v/950/depositphotos_39258205-stock-illustration-businessman-avatar-profile-picture.jpg",
+
+    "phoneNumber": "123456789",
+    "email": "abc@gmail.com",
+    "city": "IF",
+
+    "cityPrefer": "Kyiv",
+    "positionApplying": "seller",
+
+    "companyName": "Best",
+    "position": "seller",
+    "dateWorkFrom": "05.12.2018",
+    "dateWorkTo": "03.04.2022",
+
+    "university": "NAU",
+    "educationLevel": "magistature",
+    "speciality": "management",
+    "dateStadyFrom": "03.04.2020",
+    "dateStadyTo": "03.04.2021"
+  },
+
+  {
+    "_id": "ioiulj2",
+    "name": "SecondName",
+    "birthDate": "03.10",
+    "avatar": "https://st3.depositphotos.com/16382270/32427/v/1600/depositphotos_324271494-stock-illustration-isolated-doctor-silhouette-avatar.jpg",
+
+    "phoneNumber": "123456789",
+    "email": "cde@gmail.com",
+    "city": "IF",
+
+    "cityPrefer": "Lviv",
+    "positionApplying": "promouter",
+
+    "companyName": "The Same",
+    "position": "seller",
+    "dateWorkFrom": "05.12.2018",
+    "dateWorkTo": "03.04.2022",
+
+    "educationPlaceName": "NAU",
+    "educationLevel": "magistature",
+    "speciality": "management",
+    "dateStadyFrom": "03.07.2021",
+    "dateStadyTo": "05.04.2022"
+  }
+]
