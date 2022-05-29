@@ -1,9 +1,10 @@
-import { FavoritesList } from '../../components/FavoritesList/FavoritesList';
+import { Section } from 'components/Section/Section';
+import { FavoritesList } from 'components/FavoritesList/FavoritesList';
 
 export const FavoritesPage = () => {
   return (
-    <div>
+    <Section title="Favorites Section">
       <FavoritesList />
-    </div>
+    </Section>
   );
 };

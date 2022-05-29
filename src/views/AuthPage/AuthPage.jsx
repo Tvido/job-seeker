@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
+import { Section } from 'components/Section/Section';
 import { LoginForm } from '../../components/LoginForm/LoginForm';
-
 import { SignUpForm } from '../../components/SignUpForm/SignUpForm';
 
 export const AuthPage = () => {
   const [view, setView] = useState('login');
   return (
-    <div className="App">
+    <Section title="Auth Section">
       <nav>
         <h3
           onClick={() => setView('login')}
@@ -22,6 +22,6 @@ export const AuthPage = () => {
         </h3>
       </nav>
       {view === 'signup' ? <SignUpForm /> : <LoginForm />}
-    </div>
+    </Section>
   );
 };

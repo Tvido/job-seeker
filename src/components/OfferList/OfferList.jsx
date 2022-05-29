@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import { Offer } from '../Offer/Offer';
 
 export const OfferList = ({ items = [] }) => {
