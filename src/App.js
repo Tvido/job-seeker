@@ -1,6 +1,7 @@
 // for reusable buttons - 02-1 [React 18] - События и состояние. 16.06.20 ---- 00.45.00
-
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import './App.css';
 import { HomePage } from 'views/HomePage/HomePage';
@@ -10,7 +11,20 @@ import { FavoritesPage } from 'views/FavoritesPage/FavoritesPage';
 import { ProfilePage } from 'views/ProfilePage/ProfilePage';
 import { AppBar } from 'components/AppBar/AppBar';
 
+import { getOffers } from './redux/actions/offers';
+import { getResumes } from './redux/actions/resumes';
+
 export default function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getOffers);
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getResumes);
+  }, [dispatch]);
+
   return (
     <div className="App">
       <AppBar />

@@ -11,7 +11,7 @@ export const FavoritesList = ({ items = [] }) => {
             salaryMin={item.salaryMin}
             salaryMax={item.salaryMax}
             typeOfEmployment={item.typeOfEmployment}
-            employeer={item.employeer}
+            companyName={item.companyName}
             location={item.location}
             contactPhoneNumber={item.contactPhoneNumber}
             description={item.description}

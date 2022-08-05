@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import defaultAvatar from '../../assets/default.jpeg'
+import defaultAvatar from '../../assets/default.jpeg';
 
 export const Resume = ({
   avatar = defaultAvatar,
@@ -9,20 +9,19 @@ export const Resume = ({
   phoneNumber,
   email,
   city,
-  cityWorkWant,
-  positionWant,
+  cityPrefer,
+  position,
   companyName,
-  positionWork,
   dateStadyFrom,
   dateStadyTo,
-  educationPlaceName,
+  university,
   educationLevel,
   speciality,
   dateWorkFrom,
-  dateWorkTo
+  dateWorkTo,
 }) => {
   return (
-    <div className='container'>
+    <div className="container">
       <h4>Info</h4>
       <img src={avatar ?? defaultAvatar} alt={name} width="160" />
       <h3>Name: {name}</h3>
@@ -34,18 +33,18 @@ export const Resume = ({
       <p>city: {city}</p>
 
       <h4>Look for</h4>
-      <p>cityWorkWant: {cityWorkWant}</p>
-      <p>positionWant: {positionWant}</p>
+      <p>cityPrefer: {cityPrefer}</p>
+      <p>position: {position}</p>
 
       <h4>Experience</h4>
       <p>companyName: {companyName}</p>
-      <p>positionWork: {positionWork}</p>
+      <p>position: {position}</p>
       <p>
         WorkPeriod: {dateStadyFrom} to {dateStadyTo}
       </p>
 
       <h4>Education</h4>
-      <p>educationPlaceName: {educationPlaceName}</p>
+      <p>university: {university}</p>
       <p>educationLevel: {educationLevel}</p>
       <p>speciality: {speciality}</p>
       <p>
@@ -62,15 +61,14 @@ Resume.propTypes = {
   phoneNumber: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
-  cityWorkWant: PropTypes.string.isRequired,
-  positionWant: PropTypes.string.isRequired,
+  cityPrefer: PropTypes.string.isRequired,
+  position: PropTypes.string.isRequired,
   companyName: PropTypes.string.isRequired,
-  positionWork: PropTypes.string.isRequired,
   dateStadyFrom: PropTypes.string.isRequired,
   dateStadyTo: PropTypes.string.isRequired,
-  educationPlaceName: PropTypes.string.isRequired,
+  university: PropTypes.string.isRequired,
   educationLevel: PropTypes.string.isRequired,
   speciality: PropTypes.string.isRequired,
   dateWorkFrom: PropTypes.string.isRequired,
   dateWorkTo: PropTypes.string.isRequired,
-}
+};

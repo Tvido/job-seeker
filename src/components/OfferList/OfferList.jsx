@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
+// import { useSelector } from 'react-redux';
+
 import { Offer } from '../Offer/Offer';
 
 export const OfferList = ({ items = [] }) => {
+  // const offers = useSelector(state => state.offers);
+  // console.log('offers :>> ', offers);
+
   return (
     <ul>
       {items.map(item => (

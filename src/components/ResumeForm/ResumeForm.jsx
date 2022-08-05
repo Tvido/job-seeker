@@ -1,11 +1,48 @@
 import { FiSend } from 'react-icons/fi';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import FileBase64 from 'react-file-base64';
+
+import { createResume } from 'redux/actions/resumes';
 
 import s from './ResumeForm.module.css';
 
 export const ResumeForm = () => {
+  const [resumeData, setResumeData] = useState({
+    formName: '',
+    formBirthDate: '',
+    formAvatar: '',
+    // formPhoneNumber: '',
+    // formEmail: '',
+    // formCity: '',
+    // formCityPrefer: '',
+    // formPositionApplying: '',
+    // formCompanyName: '',
+    // formPosition: '',
+    // formDateStadyFrom: '',
+    // formDateStadyTo: '',
+    // formUniversity: '',
+    // formEducationLevel: '',
+    // formSpeciality: '',
+    // formDateWorkFrom: '',
+    // formDateWorkTo: '',
+  });
+
+  const dispatch = useDispatch();
+
+  // const handleChange = e => {};
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    dispatch(createResume(resumeData));
+  };
+
+  const clear = () => {};
+
   return (
     <div>
-      <form action="" className={s.container}>
+      <form action="" className={s.container} onSubmit={handleSubmit}>
         <h1 className={s.title}>RESUME</h1>
         <div className={s.inputs}>
           <div>
@@ -13,88 +50,107 @@ export const ResumeForm = () => {
 
             <div className={s.content}>
               <input
-                id="name"
+                id="formName"
+                onChange={e =>
+                  setResumeData({ ...resumeData, formName: e.target.value })
+                }
+                value={resumeData.formName}
                 type="text"
-                name="name"
+                name="formName"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              <label htmlFor="name" className={s.label}>
+              <label htmlFor="formName" className={s.label}>
                 * Name
               </label>
             </div>
 
             <div className={s.content}>
               <input
-                id="birthDate"
+                id="formBirthDate"
+                onChange={e =>
+                  setResumeData({
+                    ...resumeData,
+                    formBirthDate: e.target.value,
+                  })
+                }
+                value={resumeData.formBirthDate}
                 type="date"
-                name="birthDate"
+                name="formBirthDate"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              {/* <label htmlFor="birthDate" className={s.label}>
-                * Birth Date
-              </label> */}
             </div>
 
-            <div className={s.content}>
-              <input
-                id="formEmail"
-                type="email"
-                name="email"
-                autoComplete="off"
-                placeholder=" "
-                className={s.input}
+            <div className="">
+              <FileBase64
+                type="file"
+                multiple={false}
+                onDone={({ base64 }) =>
+                  setResumeData({ ...resumeData, formAvatar: base64 })
+                }
               />
-              <label htmlFor="formEmail" className={s.label}>
-                * Avatar
-              </label>
             </div>
+            {/*
           </div>
-
           <div>
             <p className={s.content}>Contacts</p>
 
             <div className={s.content}>
               <input
-                id="phoneNumber"
+                id="formPhoneNumber"
+                onChange={e =>
+                  setResumeData({
+                    ...resumeData,
+                    formPhoneNumber: e.target.value,
+                  })
+                }
+                value={resumeData.formPhoneNumber}
                 type="tel"
-                name="phoneNumber"
+                name="formPhoneNumber"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              <label htmlFor="phoneNumber" className={s.label}>
+              <label htmlFor="formPhoneNumber" className={s.label}>
                 * Phone Number
               </label>
             </div>
 
             <div className={s.content}>
               <input
-                id="email"
+                id="formEmail"
+                onChange={e =>
+                  setResumeData({ ...resumeData, formEmail: e.target.value })
+                }
+                value={resumeData.formEmail}
                 type="email"
-                name="email"
+                name="formEmail"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              <label htmlFor="email" className={s.label}>
+              <label htmlFor="formEmail" className={s.label}>
                 * Email
               </label>
             </div>
 
             <div className={s.content}>
               <input
-                id="city"
+                id="formCity"
+                onChange={e =>
+                  setResumeData({ ...resumeData, formCity: e.target.value })
+                }
+                value={resumeData.formCity}
                 type="text"
-                name="city"
+                name="formCity"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              <label htmlFor="city" className={s.label}>
+              <label htmlFor="formCity" className={s.label}>
                 * City
               </label>
             </div>
@@ -105,28 +161,42 @@ export const ResumeForm = () => {
 
             <div className={s.content}>
               <input
-                id="cityPrefer"
+                id="formCityPrefer"
+                onChange={e =>
+                  setResumeData({
+                    ...resumeData,
+                    formCityPrefer: e.target.value,
+                  })
+                }
+                value={resumeData.formCityPrefer}
                 type="text"
-                name="cityPrefer"
+                name="formCityPrefer"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              <label htmlFor="cityPrefer" className={s.label}>
+              <label htmlFor="formCityPrefer" className={s.label}>
                 * City You Prefer
               </label>
             </div>
 
             <div className={s.content}>
               <input
-                id="positionApplying"
+                id="formPositionApplying"
+                onChange={e =>
+                  setResumeData({
+                    ...resumeData,
+                    formPositionApplying: e.target.value,
+                  })
+                }
+                value={resumeData.formPositionApplying}
                 type="text"
-                name="positionApplying"
+                name="formPositionApplying"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              <label htmlFor="positionApplying" className={s.label}>
+              <label htmlFor="formPositionApplying" className={s.label}>
                 * Position Applying
               </label>
             </div>
@@ -137,58 +207,77 @@ export const ResumeForm = () => {
 
             <div className={s.content}>
               <input
-                id="companyName"
+                id="formCompanyName"
+                onChange={e =>
+                  setResumeData({
+                    ...resumeData,
+                    formCompanyName: e.target.value,
+                  })
+                }
+                value={resumeData.formCompanyName}
                 type="text"
-                name="companyName"
+                name="formCompanyName"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              <label htmlFor="companyName" className={s.label}>
+              <label htmlFor="formCompanyName" className={s.label}>
                 * Company Name
               </label>
             </div>
 
             <div className={s.content}>
               <input
-                id="position"
+                id="formPosition"
+                onChange={e =>
+                  setResumeData({ ...resumeData, formPosition: e.target.value })
+                }
+                value={resumeData.formPosition}
                 type="text"
-                name="position"
+                name="formPosition"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              <label htmlFor="position" className={s.label}>
+              <label htmlFor="formPosition" className={s.label}>
                 * Position
               </label>
             </div>
 
             <div className={s.content}>
               <input
-                id="dateWorkFrom"
+                id="formDateWorkFrom"
+                onChange={e =>
+                  setResumeData({
+                    ...resumeData,
+                    formDateWorkFrom: e.target.value,
+                  })
+                }
+                value={resumeData.formDateWorkFrom}
                 type="date"
-                name="dateWorkFrom"
+                name="formDateWorkFrom"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              {/* <label htmlFor="dateWorkFrom" className={s.label}>
-                * Start Date
-              </label> */}
             </div>
 
             <div className={s.content}>
               <input
-                id="dateWorkTo"
+                id="formDateWorkTo"
+                onChange={e =>
+                  setResumeData({
+                    ...resumeData,
+                    formDateWorkTo: e.target.value,
+                  })
+                }
+                value={resumeData.formDateWorkTo}
                 type="date"
-                name="dateWorkTo"
+                name="formDateWorkTo"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              {/* <label htmlFor="dateWorkTo" className={s.label}>
-                * End Date
-              </label> */}
             </div>
           </div>
 
@@ -197,73 +286,102 @@ export const ResumeForm = () => {
 
             <div className={s.content}>
               <input
-                id="university"
+                id="formUniversity"
+                onChange={e =>
+                  setResumeData({
+                    ...resumeData,
+                    formUniversity: e.target.value,
+                  })
+                }
+                value={resumeData.formUniversity}
                 type="text"
-                name="university"
+                name="formUniversity"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              <label htmlFor="university" className={s.label}>
+              <label htmlFor="formUniversity" className={s.label}>
                 * University
               </label>
             </div>
 
             <div className={s.content}>
               <input
-                id="educationLevel"
+                id="formEducationLevel"
+                onChange={e =>
+                  setResumeData({
+                    ...resumeData,
+                    formEducationLevel: e.target.value,
+                  })
+                }
+                value={resumeData.formEducationLevel}
                 type="text"
-                name="educationLevel"
+                name="formEducationLevel"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              <label htmlFor="educationLevel" className={s.label}>
+              <label htmlFor="formEducationLevel" className={s.label}>
                 * Education Level
               </label>
             </div>
 
             <div className={s.content}>
               <input
-                id="speciality"
+                id="formSpeciality"
+                onChange={e =>
+                  setResumeData({
+                    ...resumeData,
+                    formSpeciality: e.target.value,
+                  })
+                }
+                value={resumeData.formSpeciality}
                 type="text"
-                name="speciality"
+                name="formSpeciality"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              <label htmlFor="speciality" className={s.label}>
+              <label htmlFor="formSpeciality" className={s.label}>
                 * Speciality
               </label>
             </div>
 
             <div className={s.content}>
               <input
-                id="dateStadyFrom"
+                id="formDateStadyFrom"
+                onChange={e =>
+                  setResumeData({
+                    ...resumeData,
+                    formDateStadyFrom: e.target.value,
+                  })
+                }
+                value={resumeData.formDateStadyFrom}
                 type="date"
-                name="dateStadyFrom"
+                name="formDateStadyFrom"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              {/* <label htmlFor="dateStadyFrom" className={s.label}>
-                * Start Date
-              </label> */}
             </div>
 
             <div className={s.content}>
               <input
-                id="dateStadyTo"
+                id="formDateStadyTo"
+                onChange={e =>
+                  setResumeData({
+                    ...resumeData,
+                    formDateStadyTo: e.target.value,
+                  })
+                }
+                value={resumeData.formDateStadyTo}
                 type="date"
-                name="dateStadyTo"
+                name="formDateStadyTo"
                 autoComplete="off"
                 placeholder=" "
                 className={s.input}
               />
-              {/* <label htmlFor="dateStadyTo" className={s.label}>
-                * End Date
-              </label> */}
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -271,6 +389,10 @@ export const ResumeForm = () => {
           <button type="submit" id="button" className="">
             НАДІСЛАТИ
             <FiSend />
+          </button>
+
+          <button id="button" className="" onClick={clear}>
+            ОЧИСТИТИ
           </button>
         </div>
       </form>

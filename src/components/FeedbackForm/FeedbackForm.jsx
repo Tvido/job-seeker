@@ -1,4 +1,4 @@
-import { Formik, Field } from 'formik';
+import { Formik } from 'formik';
 import { FiSend } from 'react-icons/fi';
 
 import s from './FeedbackForm.module.css';

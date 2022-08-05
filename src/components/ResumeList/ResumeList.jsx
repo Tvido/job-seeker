@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
+// import { useSelector } from 'react-redux';
 
 import { Resume } from '../Resume/Resume';
 
 export const ResumeList = ({ items = [] }) => {
+  // const resumes = useSelector(state => state.resumes);
+  // console.log('resumes :>> ', resumes);
+
   return (
     <ul>
       {items.map(item => (
@@ -14,17 +18,17 @@ export const ResumeList = ({ items = [] }) => {
             phoneNumber={item.phoneNumber}
             email={item.email}
             city={item.city}
-            cityWorkWant={item.cityWorkWant}
-            positionWant={item.positionWant}
+            cityPrefer={item.cityPrefer}
+            positionApplying={item.positionWant}
             companyName={item.companyName}
-            positionWork={item.positionWork}
-            dateStadyFrom={item.dateStadyFrom}
-            dateStadyTo={item.dateStadyTo}
-            educationPlaceName={item.educationPlaceName}
-            educationLevel={item.educationLevel}
-            speciality={item.speciality}
+            position={item.position}
             dateWorkFrom={item.dateWorkFrom}
             dateWorkTo={item.dateWorkTo}
+            university={item.university}
+            educationLevel={item.educationLevel}
+            speciality={item.speciality}
+            dateStadyFrom={item.dateStadyFrom}
+            dateStadyTo={item.dateStadyTo}
           />
         </li>
       ))}
@@ -33,7 +37,9 @@ export const ResumeList = ({ items = [] }) => {
 };
 
 ResumeList.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-  }))
-}
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+    }),
+  ),
+};

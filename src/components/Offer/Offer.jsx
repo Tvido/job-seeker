@@ -11,6 +11,9 @@ export const Offer = ({
   location,
   contactPhoneNumber,
   description = 'немає опису',
+  tags,
+  likes,
+  created,
 }) => {
   return (
     <div className="container">
@@ -27,6 +30,9 @@ export const Offer = ({
 
       <h4>description</h4>
       <p>description: {description}</p>
+      <p>tags: {tags}</p>
+      <p>likes: {likes}</p>
+      <p>created: {created}</p>
     </div>
   );
 };

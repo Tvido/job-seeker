@@ -6,7 +6,7 @@ export const Favorites = ({
   salaryMin,
   salaryMax,
   typeOfEmployment,
-  employeer,
+  companyName,
   location,
   contactPhoneNumber,
   description = 'немає опису',
@@ -20,7 +20,7 @@ export const Favorites = ({
       <p>typeOfEmployment: {typeOfEmployment}</p>
 
       <h4>Contacts</h4>
-      <p>employeer: {employeer}</p>
+      <p>companyName: {companyName}</p>
       <p>location: {location}</p>
       <p>contactPhoneNumber: {contactPhoneNumber}</p>
 
@@ -35,7 +35,7 @@ Favorites.propTypes = {
   salaryMin: PropTypes.number.isRequired,
   salaryMax: PropTypes.number.isRequired,
   typeOfEmployment: PropTypes.string.isRequired,
-  employeer: PropTypes.string.isRequired,
+  companyName: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   contactPhoneNumber: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
